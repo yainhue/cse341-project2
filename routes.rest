@@ -1,0 +1,87 @@
+### Get all products
+GET http://localhost:3000/products
+Content-Type: application/json
+
+### Get all reviews
+GET http://localhost:3000/reviews
+Content-Type: application/json
+
+###
+
+### Get a single product by ID
+GET http://localhost:3000/products/6aac4cd44874b75dba48b415
+Content-Type: application/json
+
+### Get a single review by ID
+GET http://localhost:3000/reviews/6aac4ced4874b75dba48b424
+Content-Type: application/json
+
+###
+
+### Create a new product
+POST http://localhost:3000/products
+Content-Type: application/json
+
+{
+    "name": "Product name",
+    "sku": "ABC-DFG-001",
+    "price": 00.00,
+    "stock": 0,
+    "category": "category",
+    "isActive": true,
+    "createdAt": "2026-09-17T18:30:00.000Z"
+}
+
+### Create a new review
+POST http://localhost:3000/reviews
+Content-Type: application/json
+
+{
+  "productId": "0",
+    "userId": "0",
+    "reviewerName": "John Doe",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "rating": 5,
+    "isVerifiedPurchase": true,
+    "createdAt": "2026-09-17T18:30:00.000Z"
+}
+
+###
+
+### Update an existing product
+PUT http://localhost:3000/products/6a98b5d3bfa5552b3cc1ee5a
+Content-Type: application/json
+
+{
+    "name": "Product name",
+    "sku": "ABC-DFG-001",
+    "price": 00.00,
+    "stock": 0,
+    "category": "category",
+    "isActive": true,
+    "createdAt": "2026-09-17T18:30:00.000Z"
+}
+
+### Update an existing review
+PUT http://localhost:3000/reviews/6a98b5d3bfa5552b3cc1ee5a
+Content-Type: application/json
+
+{
+  "productId": "0",
+    "userId": "0",
+    "reviewerName": "John Doe",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "rating": 5,
+    "isVerifiedPurchase": true,
+    "createdAt": "2026-09-17T18:30:00.000Z"
+}
+
+###
+
+### Delete a product
+DELETE http://localhost:3000/products/6a9f70c7e9aadce4cf17f829
+Content-Type: application/json
+
+### Delete a review
+DELETE http://localhost:3000/reviews/6a9f70c7e9aadce4cf17f829
+Content-Type: application/json

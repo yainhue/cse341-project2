@@ -1,0 +1,36 @@
+{
+  "name": "cse341-project2",
+  "version": "1.0.0",
+  "description": "cse341",
+  "keywords": [
+    "cse341"
+  ],
+  "homepage": "https://github.com/yainhue/cse341-project2#readme",
+  "bugs": {
+    "url": "https://github.com/yainhue/cse341-project2/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yainhue/cse341-project2.git"
+  },
+  "license": "ISC",
+  "author": "yain huento",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  },
+  "dependencies": {
+    "body-parser": "^2.3.0",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "mongodb": "^7.6.0",
+    "node": "^26.9.0",
+    "swagger-autogen": "^2.23.7",
+    "swagger-ui-express": "^5.0.1"
+  }
+}
