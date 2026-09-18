@@ -26,11 +26,13 @@ const getSingle = async (req, res) => {
 const createReview = async (req, res) => {
   //#swagger.tags=["Reviews"]
   const Review = {
-    firstName: req.body.firstName,
-    lastName: req.body.lastName,
-    email: req.body.email,
-    favoriteColor: req.body.favoriteColor,
-    birthday: req.body.birthday,
+    productId: req.body.productId,
+    userId: req.body.userId,
+    reviewerName: req.body.reviewerName,
+    content: req.body.content,
+    rating: req.body.rating,
+    isVerifiedPurchase: req.body.isVerifiedPurchase,
+    createdAt: req.body.createdAt,
   };
 
   const response = await mongodb
@@ -39,7 +41,7 @@ const createReview = async (req, res) => {
     .insertOne(Review);
 
   if (response.acknowledged) {
-    res.status(204).send("created succesfuly!");
+    res.status(200).send("Review created succesfuly!");
   } else {
     res
       .status(500)
@@ -51,11 +53,13 @@ const updateReview = async (req, res) => {
   //#swagger.tags=["Reviews"]
   const reviewId = new ObjectId(req.params.id);
   const Review = {
-    firstName: req.body.firstName,
-    lastName: req.body.lastName,
-    email: req.body.email,
-    favoriteColor: req.body.favoriteColor,
-    birthday: req.body.birthday,
+    productId: req.body.productId,
+    userId: req.body.userId,
+    reviewerName: req.body.reviewerName,
+    content: req.body.content,
+    rating: req.body.rating,
+    isVerifiedPurchase: req.body.isVerifiedPurchase,
+    createdAt: req.body.createdAt,
   };
 
   const response = await mongodb
@@ -64,7 +68,7 @@ const updateReview = async (req, res) => {
     .replaceOne({ _id: reviewId }, Review);
 
   if (response.modifiedCount > 0) {
-    res.status(204).send("updated succesfuly!");
+    res.status(200).send("updated succesfuly!");
   } else {
     res
       .status(500)
@@ -82,7 +86,7 @@ const deleteReview = async (req, res) => {
     .deleteOne({ _id: reviewId }, true);
 
   if (response.acknowledged) {
-    res.status(204).send("deleted succesfuly!");
+    res.status(200).send("deleted succesfuly!");
   } else {
     res
       .status(500)

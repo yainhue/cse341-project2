@@ -1,10 +1,10 @@
 {
   "0": {
     "info": {
-      "title": "Contacts API",
-      "description": "Contacts API"
+      "title": "CSE 341 Project 2 - Store API",
+      "description": "CSE 341 Project 2 - Store API"
     },
-    "host": "cse341-project1-m6xr.onrender.com",
+    "host": "localhost:3000",
     "schemes": [
       "https"
     ]
@@ -12,10 +12,10 @@
   "swagger": "2.0",
   "info": {
     "version": "1.0.0",
-    "title": "Contacts API",
-      "description": "Contacts API"
+    "title": "CSE 341 Project 2 - Store API",
+    "description": "CSE 341 Project 2 - Store API"
   },
-  "host": "cse341-project1-m6xr.onrender.com",
+  "host": "localhost:3000",
   "basePath": "/",
   "schemes": [
     "https"
@@ -34,20 +34,10 @@
         }
       }
     },
-    "/api-docs": {
-      "get": {
-        "description": "",
-        "responses": {
-          "default": {
-            "description": ""
-          }
-        }
-      }
-    },
-    "/contacts/": {
+    "/products/": {
       "get": {
         "tags": [
-          "Contacts"
+          "Products"
         ],
         "description": "",
         "produces": [
@@ -61,7 +51,7 @@
       },
       "post": {
         "tags": [
-          "Contacts"
+          "Products"
         ],
         "description": "",
         "parameters": [
@@ -71,19 +61,25 @@
             "schema": {
               "type": "object",
               "properties": {
-                "firstName": {
+                "name": {
                   "example": "any"
                 },
-                "lastName": {
+                "sku": {
                   "example": "any"
                 },
-                "email": {
+                "price": {
                   "example": "any"
                 },
-                "favoriteColor": {
+                "stock": {
                   "example": "any"
                 },
-                "birthday": {
+                "category": {
+                  "example": "any"
+                },
+                "isActive": {
+                  "example": "any"
+                },
+                "createdAt": {
                   "example": "any"
                 }
               }
@@ -91,8 +87,8 @@
           }
         ],
         "responses": {
-          "204": {
-            "description": "No Content"
+          "200": {
+            "description": "OK"
           },
           "500": {
             "description": "Internal Server Error"
@@ -100,10 +96,10 @@
         }
       }
     },
-    "/contacts/{id}": {
+    "/products/{id}": {
       "get": {
         "tags": [
-          "Contacts"
+          "Products"
         ],
         "description": "",
         "produces": [
@@ -125,7 +121,7 @@
       },
       "put": {
         "tags": [
-          "Contacts"
+          "Products"
         ],
         "description": "",
         "parameters": [
@@ -141,19 +137,25 @@
             "schema": {
               "type": "object",
               "properties": {
-                "firstName": {
+                "name": {
                   "example": "any"
                 },
-                "lastName": {
+                "sku": {
                   "example": "any"
                 },
-                "email": {
+                "price": {
                   "example": "any"
                 },
-                "favoriteColor": {
+                "stock": {
                   "example": "any"
                 },
-                "birthday": {
+                "category": {
+                  "example": "any"
+                },
+                "isActive": {
+                  "example": "any"
+                },
+                "createdAt": {
                   "example": "any"
                 }
               }
@@ -161,8 +163,8 @@
           }
         ],
         "responses": {
-          "204": {
-            "description": "No Content"
+          "200": {
+            "description": "OK"
           },
           "500": {
             "description": "Internal Server Error"
@@ -171,7 +173,7 @@
       },
       "delete": {
         "tags": [
-          "Contacts"
+          "Products"
         ],
         "description": "",
         "parameters": [
@@ -183,8 +185,168 @@
           }
         ],
         "responses": {
-          "204": {
-            "description": "No Content"
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/reviews/": {
+      "get": {
+        "tags": [
+          "Reviews"
+        ],
+        "description": "",
+        "produces": [
+          "aplication/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Reviews"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "productId": {
+                  "example": "any"
+                },
+                "userId": {
+                  "example": "any"
+                },
+                "reviewerName": {
+                  "example": "any"
+                },
+                "content": {
+                  "example": "any"
+                },
+                "rating": {
+                  "example": "any"
+                },
+                "isVerifiedPurchase": {
+                  "example": "any"
+                },
+                "createdAt": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/reviews/{id}": {
+      "get": {
+        "tags": [
+          "Reviews"
+        ],
+        "description": "",
+        "produces": [
+          "aplication/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Reviews"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "productId": {
+                  "example": "any"
+                },
+                "userId": {
+                  "example": "any"
+                },
+                "reviewerName": {
+                  "example": "any"
+                },
+                "content": {
+                  "example": "any"
+                },
+                "rating": {
+                  "example": "any"
+                },
+                "isVerifiedPurchase": {
+                  "example": "any"
+                },
+                "createdAt": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Reviews"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
           },
           "500": {
             "description": "Internal Server Error"
