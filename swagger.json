@@ -4,7 +4,7 @@
       "title": "CSE 341 Project 2 - Store API",
       "description": "CSE 341 Project 2 - Store API"
     },
-    "host": "https://cse341-project2-eh54.onrender.com",
+    "host": "cse341-project2-eh54.onrender.com",
     "schemes": [
       "https"
     ]
@@ -15,7 +15,7 @@
     "title": "CSE 341 Project 2 - Store API",
     "description": "CSE 341 Project 2 - Store API"
   },
-  "host": "https://cse341-project2-eh54.onrender.com",
+  "host": "cse341-project2-eh54.onrender.com",
   "basePath": "/",
   "schemes": [
     "https"
