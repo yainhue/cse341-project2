@@ -26,6 +26,32 @@ app.use((req, res, next) => {
 // send to the router
 app.use("/", require("./routes"));
 
+// if the route does not match to the defined routes call this:
+app.use((req, res, next) => {
+  const error = new Error(
+    "Not Found - The page you are looking for does not exist.",
+  );
+  error.status = 404;
+  next(error);
+});
+
+// global error handler
+app.use((err, req, res, next) => {
+  //if the ID format is INVALID:
+  if (err.message.includes("24 character hex string")) {
+    return res.status(400).json({
+      message: "Invalid ID format",
+      status: 400,
+    });
+  }
+
+  // Para otros errores
+  res.status(err.status || 500).json({
+    message: "Something went wrong. Please try again later.",
+    status: err.status || 500,
+  });
+});
+
 // function to initialize the DB
 mongodb.InitDb((err) => {
   // if an error is found, log it
