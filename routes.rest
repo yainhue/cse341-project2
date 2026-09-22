@@ -1,7 +1,3 @@
-### test error handling
-GET http://localhost:3000/fake
-Content-Type: application/json
-
 ### Get all products
 GET http://localhost:3000/products
 Content-Type: application/json
@@ -13,11 +9,11 @@ Content-Type: application/json
 ###
 
 ### Get a single product by ID
-GET http://localhost:3000/products/aac4cd44874b75dba48b415
+GET http://localhost:3000/products/6aac4cd44874b75dba48b415
 Content-Type: application/json
 
 ### Get a single review by ID
-GET http://localhost:3000/reviews/aac4ced4874b75dba48b424
+GET http://localhost:3000/reviews/6ab1d4734d206d5e0039a6ab
 Content-Type: application/json
 
 ###
@@ -27,8 +23,8 @@ POST http://localhost:3000/products
 Content-Type: application/json
 
 {
-    "name": 1,
-    "sku": "ABC-DFG",
+    "name": "Product name",
+    "sku": "ABC-DFG-001",
     "price": 0,
     "stock": 0,
     "category": "category",
@@ -41,28 +37,28 @@ POST http://localhost:3000/reviews
 Content-Type: application/json
 
 {
-  "productId":"1" ,
-    "userId": "0",
-    "reviewerName": 5,
+  "productId": "123412341234123412341234",
+    "userId": "123412341234123412341234",
+    "reviewerName": "Jhon Doe",
     "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     "rating": 5,
-    "isVerifiedPurchase": "UN CORASON COMO EL TUSHO",
+    "isVerifiedPurchase": true,
     "createdAt": "2026-09-17T18:30:00.000Z"
 }
 
 ###
 
 ### Update an existing product
-PUT http://localhost:3000/products/6aaf3ceb9496d4e1b14cfe08
+PUT http://localhost:3000/products/6aad8bdd740f558a54945c45
 Content-Type: application/json
 
 {
-    "name": "string",
-    "sku": "12345678901",
-    "price": "JAJAJJA",
-    "stock": "paraiso",
+    "name": "Product name",
+    "sku": "ABC-DFG-001",
+    "price": 0,
+    "stock": 0,
     "category": "category",
-    "isActive": "cualquier cosa",
+    "isActive": true,
     "createdAt": "2026-09-17T18:30:00.000Z"
 }
 
@@ -71,11 +67,11 @@ PUT http://localhost:3000/reviews/6aac4ced4874b75dba48b433
 Content-Type: application/json
 
 {
-  "productId": "123512351235123512351235",
-    "userId": "123512351235123512351235",
+  "productId": "0",
+    "userId": "0",
     "reviewerName": "Jhon Doe",
     "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    "rating": 1,
+    "rating": 5,
     "isVerifiedPurchase": true,
     "createdAt": "2026-09-17T18:30:00.000Z"
 }
