@@ -20,6 +20,18 @@
   "schemes": [
     "https"
   ],
+"securityDefinitions": {
+  "oauth2": {
+    "type": "oauth2",
+    "flow": "implicit",
+    "authorizationUrl": "",
+    "scopes": {
+      "read:user": "Read user profile data",
+      "user:email": "Access user email addresses"
+    },
+    "description": "Authentication handled externally via GitHub OAuth2 (Passport). No client_id required."
+  }
+},
   "paths": {
     "/": {
       "get": {
@@ -93,8 +105,10 @@
           "500": {
             "description": "Internal Server Error"
           }
-        }
-      }
+        },
+        "security": [
+      { "oauth2": [] }
+      ]}
     },
     "/products/{id}": {
       "get": {
@@ -169,7 +183,10 @@
           "500": {
             "description": "Internal Server Error"
           }
-        }
+        },
+        "security": [
+        { "oauth2": [] }
+        ]
       },
       "delete": {
         "tags": [
@@ -191,7 +208,10 @@
           "500": {
             "description": "Internal Server Error"
           }
-        }
+        },
+        "security": [
+        { "oauth2": [] }
+        ]
       }
     },
     "/reviews/": {
@@ -253,7 +273,10 @@
           "500": {
             "description": "Internal Server Error"
           }
-        }
+        },
+         "security": [
+        { "oauth2": [] }
+        ]
       }
     },
     "/reviews/{id}": {
@@ -329,7 +352,10 @@
           "500": {
             "description": "Internal Server Error"
           }
-        }
+        },
+         "security": [
+        { "oauth2": [] }
+        ]
       },
       "delete": {
         "tags": [
@@ -351,7 +377,10 @@
           "500": {
             "description": "Internal Server Error"
           }
-        }
+        },
+        "security": [
+        { "oauth2": [] }
+        ]
       }
     }
   }
